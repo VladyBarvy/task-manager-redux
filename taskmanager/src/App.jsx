@@ -39,6 +39,7 @@ export default App
 import React from 'react';
 import TaskForm from './components/TaskForm.jsx';
 import TaskList from './components/TaskList.jsx';
+import Weather from './components/Weather.jsx';
 
 const App = () => {
   return (
@@ -46,6 +47,7 @@ const App = () => {
       <h1>Task Manager</h1>
       <TaskForm />
       <TaskList />
+      <Weather />
     </div>
   );
 };
