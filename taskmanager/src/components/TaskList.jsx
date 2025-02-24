@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion"; // Импортируе
 const TaskList = () => {
   const dispatch = useDispatch();
   const tasks = useSelector(state => state.tasks.list);
-
+  const theme = useSelector(state => state.theme); // Получаем текущую тему
   const [isEditing, setIsEditing] = useState(null); // Хранит id задачи, которую редактируем
   const [newText, setNewText] = useState(''); // Новый текст для редактируемой задачи
 
@@ -68,10 +68,14 @@ const TaskList = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              background: "#f4f4f4",
+              // background: "#f4f4f4",
+              background: theme === 'light' ? "#f4f4f4" : "#555555", // Применяем тему
               padding: "10px",
               borderRadius: "5px",
               marginBottom: "5px",
+              color: theme === 'light' ? "#000000" : "#ffffff", // Применяем тему
+              maxWidth: "200px", // Ограничиваем ширину строки
+              overflow: "hidden", // Скрываем содержимое, которое выходит за пределы
             }}
           >
             {isEditing === task.id ? (

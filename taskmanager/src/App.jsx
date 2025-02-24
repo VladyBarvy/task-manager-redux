@@ -40,11 +40,13 @@ import React from 'react';
 import TaskForm from './components/TaskForm.jsx';
 import TaskList from './components/TaskList.jsx';
 import Weather from './components/Weather.jsx';
+import ThemeToggle from './components/ThemeToggle.jsx';
 
 const App = () => {
   return (
     <div>
       <h1>Task Manager</h1>
+      <ThemeToggle />
       <TaskForm />
       <TaskList />
       <Weather />
